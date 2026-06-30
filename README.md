@@ -1,41 +1,100 @@
-# Project Description
+Project Description
 
 # Flavorista - Course Enrollment Management System
 
-# Developed by Uzma, Tanni, Abida
+## Developed by Uzma, Tanni, Abida
 
-## Getting Started
 
-Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Purpose
 
-## Folder Structure
+This document defines the functional and non-functional requirements of the Flavorista Course Enrollment Management System.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+It describes the system features, user interactions, application structure, database requirements, and limitations.
 
 ---
 
-# 1. Introduction
+# 1. Project Summary
 
-## 1.1 Purpose
+## 1.1 Project Overview
 
-Flavorista is a desktop-based cooking course enrollment management system developed using Java Swing. The system allows users to create accounts, log in securely, view available courses, and enroll in selected courses.
+Flavorista is a Java-based cooking course enrollment management system developed as a desktop application.
 
-The application stores user and course-related information in a database and provides a simple graphical user interface for interaction.
+The system allows users to create accounts, securely log in, browse available courses, and enroll in selected courses.
+
+The application provides a graphical user interface using Java Swing and stores user, course, and enrollment information using a MySQL database through JDBC.
 
 ---
 
-## 1.2 Project Scope
+## 1.2 Project Background
+
+Managing course information and user enrollments manually can become difficult when records increase.
+
+Traditional methods may require maintaining separate records for users, courses, and enrollments, which can lead to difficulties in managing data efficiently.
+
+Flavorista provides a centralized system where users, courses, and enrollment records can be handled through a single application.
+
+---
+
+## 1.3 Problem Statement
+
+Manual course management may create problems such as:
+
+* Difficulty maintaining user records
+* Difficulty tracking course registrations
+* Slow enrollment processes
+* Lack of centralized information storage
+
+Flavorista solves these problems by providing an automated course enrollment management system.
+
+---
+
+## 1.4 Project Motivation
+
+This project was developed to apply practical software development concepts including:
+
+* Object-oriented programming
+* GUI application development
+* Database integration
+* CRUD operations
+* Layered software architecture
+
+---
+
+## 1.5 Project Objectives
+
+The objectives of Flavorista are:
+
+* Develop a user-friendly course enrollment system
+* Allow users to register and authenticate
+* Store user and course information using a database
+* Provide course browsing functionality
+* Manage enrollment records
+* Demonstrate Java application development with database connectivity
+
+---
+
+## 1.6 Target Users
+
+### Learners
+
+Users can:
+
+* Create an account
+* Login
+* Browse available courses
+* Enroll in courses
+
+### Administrators (Future)
+
+Administrators may:
+
+* Manage courses
+* Manage users
+* Monitor enrollments
+
+---
+
+## 1.7 Project Scope
 
 The system provides:
 
@@ -44,53 +103,136 @@ The system provides:
 * Course listing
 * Course enrollment
 * User data storage
-* Course data retrieval from database
+* Course data retrieval
 * Enrollment record management
 
 The system is designed for users who want to browse available courses and enroll in them.
 
 ---
 
-# 2. System Overview
+## 1.8 Project Limitations
 
-## 2.1 Application Type
+The current version does not include:
 
-Desktop Application
-
----
-
-## 2.2 Technology Stack
-
-### Programming Language
-
-* Java
-
-### User Interface
-
-* Java Swing
-
-### Database
-
-* MySQL
-
-### Database Connectivity
-
-* JDBC
-
-### Architecture Pattern
-
-* Layered architecture (UI, DAO, Model, Database)
+* Online payment system
+* Instructor management
+* Video lessons
+* Certificate generation
+* Mobile application
+* Cloud deployment
 
 ---
 
-# 3. System Architecture
+# 2. Development Environment
+
+## IDE
+
+Visual Studio Code
+
+## Programming Language
+
+Java
+
+## User Interface
+
+Java Swing
+
+## Database
+
+MySQL
+
+## Database Connectivity
+
+JDBC
+
+## Architecture Pattern
+
+Layered Architecture:
+
+* UI Layer
+* DAO Layer
+* Model Layer
+* Database Connection Layer
+
+---
+
+# 3. Getting Started
+
+## Folder Structure
+
+The project contains the following structure:
+
+Flavorista/
+
+│
+
+├── Main.java
+
+│
+
+├── ui/
+
+│   ├── LoginFrame.java
+
+│   ├── RegisterFrame.java
+
+│   ├── DashboardFrame.java
+
+│   └── CourseListFrame.java
+
+│
+
+├── dao/
+
+│   ├── UserDAO.java
+
+│   ├── CourseDAO.java
+
+│   └── EnrollmentDAO.java
+
+│
+
+├── model/
+
+│   ├── User.java
+
+│   ├── Course.java
+
+│   └── Enrollment.java
+
+│
+
+├── db/
+
+│   └── DBConnection.java
+
+│
+
+└── logo/
+
+```
+└── flavorista.jpg
+```
+
+---
+
+## Dependency Management
+
+The project uses Java dependencies managed through the JAVA PROJECTS environment.
+
+External database dependency:
+
+* MySQL JDBC Driver
+
+---
+
+# 4. System Architecture
 
 The application follows a layered structure:
 
-```
 User
 
- ↓
+↓
 
 Swing UI Layer
 
@@ -99,7 +241,7 @@ RegisterFrame,
 DashboardFrame,
 CourseListFrame)
 
- ↓
+↓
 
 DAO Layer
 
@@ -107,22 +249,21 @@ DAO Layer
 CourseDAO,
 EnrollmentDAO)
 
- ↓
+↓
 
 Database Connection Layer
 
 (DBConnection)
 
- ↓
+↓
 
 MySQL Database
 
 (flavorista)
-```
 
 ---
 
-# 4. Functional Requirements
+# 5. Functional Requirements
 
 ## FR-01: User Registration
 
@@ -140,7 +281,7 @@ User enters:
 
 ### Processing
 
-The system creates a new User object and sends data to UserDAO.
+The system creates a User object and sends data to UserDAO.
 
 The information is inserted into the users table.
 
@@ -156,7 +297,7 @@ If failed:
 
 ---
 
-# FR-02: User Login
+## FR-02: User Login
 
 ### Description
 
@@ -185,7 +326,7 @@ Failed login:
 
 ---
 
-# FR-03: Display Dashboard
+## FR-03: Display Dashboard
 
 ### Description
 
@@ -198,7 +339,7 @@ After successful authentication, the system displays the dashboard.
 
 ---
 
-# FR-04: View Available Courses
+## FR-04: View Available Courses
 
 ### Description
 
@@ -214,14 +355,13 @@ The system displays:
 
 Example:
 
-```
 1 - Java Programming ($50)
+
 2 - Database Systems ($60)
-```
 
 ---
 
-# FR-05: Course Enrollment
+## FR-05: Course Enrollment
 
 ### Description
 
@@ -250,38 +390,19 @@ Message:
 
 ---
 
-# FR-06: Database Connection
+## FR-06: Database Connection
 
 ### Description
 
 The system shall connect to the MySQL database using JDBC.
 
-### Connection Information
-
 Database:
 
-```
 flavorista
-```
 
 Connection handled by:
 
-```
 DBConnection.java
-```
-
----
-
-# 5. User Requirements
-
-## User
-
-A user should be able to:
-
-* Create an account
-* Login
-* Browse courses
-* Enroll in courses
 
 ---
 
@@ -291,11 +412,9 @@ A user should be able to:
 
 File:
 
-```
 Main.java
-```
 
-Responsibility:
+Responsibilities:
 
 * Starts application
 * Opens login window
@@ -306,11 +425,11 @@ Responsibility:
 
 Files:
 
-```
 LoginFrame.java
+
 RegisterFrame.java
+
 UserDAO.java
-```
 
 Responsibilities:
 
@@ -324,10 +443,9 @@ Responsibilities:
 
 Files:
 
-```
 CourseListFrame.java
+
 CourseDAO.java
-```
 
 Responsibilities:
 
@@ -338,11 +456,9 @@ Responsibilities:
 
 ## 6.4 Enrollment Module
 
-Files:
+File:
 
-```
 EnrollmentDAO.java
-```
 
 Responsibilities:
 
@@ -354,9 +470,7 @@ Responsibilities:
 
 File:
 
-```
 DBConnection.java
-```
 
 Responsibilities:
 
@@ -369,9 +483,7 @@ Responsibilities:
 
 Database Name:
 
-```
 flavorista
-```
 
 ---
 
@@ -380,8 +492,6 @@ flavorista
 Purpose:
 
 Stores registered users.
-
-Fields:
 
 | Field    | Type    |
 | -------- | ------- |
@@ -398,8 +508,6 @@ Purpose:
 
 Stores available courses.
 
-Fields:
-
 | Field | Type    |
 | ----- | ------- |
 | id    | Integer |
@@ -413,8 +521,6 @@ Fields:
 Purpose:
 
 Stores user course registrations.
-
-Fields:
 
 | Field     | Type    |
 | --------- | ------- |
@@ -494,5 +600,3 @@ Possible future upgrades:
 Flavorista is a Java-based course enrollment system that demonstrates user authentication, database connectivity, CRUD operations, and GUI application development.
 
 The current system provides the foundation for future conversion into a full-scale web-based learning platform.
-
-
