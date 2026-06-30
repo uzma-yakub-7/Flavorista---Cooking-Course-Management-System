@@ -1,4 +1,4 @@
-# Flavorist---Cooking-Course-Management-System
+# Flavorista---Cooking-Course-Management-System
 An App for Learning Cooking Online
 
 ## Getting Started
