@@ -27,7 +27,7 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ## 1.1 Purpose
 
-Flavorista is a desktop-based course enrollment management system developed using Java Swing. The system allows users to create accounts, log in securely, view available courses, and enroll in selected courses.
+Flavorista is a desktop-based cooking course enrollment management system developed using Java Swing. The system allows users to create accounts, log in securely, view available courses, and enroll in selected courses.
 
 The application stores user and course-related information in a database and provides a simple graphical user interface for interaction.
 
