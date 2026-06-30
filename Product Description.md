@@ -1,6 +1,6 @@
 # Product Description
 
-# Flavorista - Course Enrollment Management System
+# Flavorista - Cooking Course Enrollment Management System
 
 ## Developed by Uzma, Tanni, Abida
 
