@@ -1,4 +1,4 @@
-Project Description
+# Product Description
 
 # Flavorista - Course Enrollment Management System
 
@@ -13,9 +13,9 @@ It describes the system features, user interactions, application structure, data
 
 ---
 
-# 1. Project Summary
+# 1. Product Summary
 
-## 1.1 Project Overview
+## 1.1 Product Overview
 
 Flavorista is a Java-based cooking course enrollment management system developed as a desktop application.
 
@@ -25,7 +25,7 @@ The application provides a graphical user interface using Java Swing and stores 
 
 ---
 
-## 1.2 Project Background
+## 1.2 Product Background
 
 Managing course information and user enrollments manually can become difficult when records increase.
 
@@ -48,7 +48,7 @@ Flavorista solves these problems by providing an automated course enrollment man
 
 ---
 
-## 1.4 Project Motivation
+## 1.4 Product Motivation
 
 This project was developed to apply practical software development concepts including:
 
@@ -60,7 +60,7 @@ This project was developed to apply practical software development concepts incl
 
 ---
 
-## 1.5 Project Objectives
+## 1.5 Product Objectives
 
 The objectives of Flavorista are:
 
@@ -94,7 +94,7 @@ Administrators may:
 
 ---
 
-## 1.7 Project Scope
+## 1.7 Product Scope
 
 The system provides:
 
@@ -110,7 +110,7 @@ The system is designed for users who want to browse available courses and enroll
 
 ---
 
-## 1.8 Project Limitations
+## 1.8 Product Limitations
 
 The current version does not include:
 
@@ -209,10 +209,7 @@ Flavorista/
 │
 
 └── logo/
-
-```
-└── flavorista.jpg
-```
+     └── flavorista.jpg
 
 ---
 
@@ -263,7 +260,7 @@ MySQL Database
 
 ---
 
-# 5. Functional Requirements
+# 5. Functional Requirements (FR)
 
 ## FR-01: User Registration
 
