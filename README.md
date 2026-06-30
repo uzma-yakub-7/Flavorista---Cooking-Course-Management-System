@@ -162,7 +162,7 @@ Layered Architecture:
 
 The project contains the following structure:
 
-Flavorista/
+src/
 
 │
 
