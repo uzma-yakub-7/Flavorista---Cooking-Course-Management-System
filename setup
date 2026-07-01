@@ -50,6 +50,14 @@ Windows needs to know your Java compiler is on the D drive, and Git/Maven must b
    4. In that same System variables box, scroll down and find the variable named Path, select it, and click Edit....
    5. Click New on the right side and type: D:\JavaEnv\jdk-azulyfx\bin
    6. Click OK on all windows to save. 
+   7. Check on VS Code Powershell Terminal: 
+ $env:JAVA_HOME="E:\JavaEnv\jdk-azulyfx"
+$env:Path="$env:JAVA_HOME\bin;$env:Path"
+java -version
+openjdk version "21.0.11" 2026-04-21 LTS
+OpenJDK Runtime Environment Zulu21.50+19-CA (build 21.0.11+10-LTS)
+OpenJDK 64-Bit Server VM Zulu21.50+19-CA (build 21.0.11+10-LTS, mixed mode, sharing)
+
 
 Step 2: Configure VS Code Global Settings
 VS Code’s Java extension automatically creates huge hidden cache folders on your C drive. We must force it to use your D drive cache folder.
