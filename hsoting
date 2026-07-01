@@ -29,17 +29,18 @@ Steps:
 Install Git, VS Code
 
 Go to: Spring Initializer
-Fill options:
-Project: Maven
-Language: Java
-Spring Boot: (latest default)
-Group: com.example
-Artifact: demo
-Add dependency: 
-Click:
-👉 Add Dependencies → Spring Web
-(VERY IMPORTANT — this enables browser UI)
-Click Generate
+* Project: Maven (Ensures your dependencies route to your D:\GlobalCaches\MavenRepository folder).
+* Language: Java
+* Spring Boot: Select the latest stable version (e.g., 3.x.x). Do not select versions with (SNAPSHOT) as they are unstable developer builds.
+* Project Metadata: Leave as default or name it com.bdapps.paidapp.
+* Packaging: Jar
+* Java: Select 17 or 21 (matching whatever version of Azul Zulu JDK FX you unzipped into D:\JavaEnv\jdk-azulyfx).
+* Dependencies (Click "Add Dependencies" or Ctrl + B and search for these three):
+1. Spring Web: Gives you the server engine to listen to payment requests.
+   2. Spring Security: Necessary to lock features and require user accounts.
+   3. MySQL Driver: Connects your backend to your existing local XAMPP MySQL database.
+
+Click Generate (Ctrl + Enter). It will download a lightweight .zip file. Save it directly to D:\JavaApps\, and unzip it there into your project folder.
 👉 It downloads a .zip
 Extract the zip: 
 You’ll get a folder like:
