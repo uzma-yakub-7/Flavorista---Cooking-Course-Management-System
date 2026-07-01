@@ -1,0 +1,103 @@
+Java Model: 
+Backend + Web UI (Most Practical): 
+Spring Boot = engine (makes Java web-ready)
+GitHub = storage + commits
+Render = hosting (makes it public)
+
+👉 This is the real-world equivalent
+
+🧠 Backend:
+Spring Boot
+Runs Java in background
+With Spring Boot
+Java runs as a server
+You open:
+http://localhost:8080
+👉 And see output in browser ✅
+
+🧠 UI:
+HTML/CSS/JS (same as frontend)
+
+🌍 Free hosting:
+Render
+Free tier
+Handles Spring Boot nicely
+Easier logs/debugging
+Better for web UI apps
+
+Steps: 
+Install Git, VS Code
+
+Go to: Spring Initializer
+Fill options:
+Project: Maven
+Language: Java
+Spring Boot: (latest default)
+Group: com.example
+Artifact: demo
+Add dependency: 
+Click:
+👉 Add Dependencies → Spring Web
+(VERY IMPORTANT — this enables browser UI)
+Click Generate
+👉 It downloads a .zip
+Extract the zip: 
+You’ll get a folder like:
+demo/
+ ├── src/
+ ├── pom.xml
+ 
+Open in VS Code:
+File → Open Folder → select demo
+🟩 What just happened?
+👉 Spring Boot is already included via:
+pom.xml
+You don’t manually install anything.
+
+🟨 Run the project (important):
+In VS Code terminal:
+./mvnw spring-boot:run
+👉 Then open browser:
+http://localhost:8080
+
+🟥 Alternative (VS Code extension):
+You can install:
+Spring Boot Extension Pack
+👉 It lets you generate projects inside VS Code
+But honestly:
+# 👉 Spring Initializr is simplest of all
+
+
+Create GitHub repo: Go to GitHub. Click New Repository. Name it (same as your folder)
+Upload Java project to GitHub: GitHub will show commands. Use each one at a time:
+git remote add origin https://github.com/yourusername/your-repo.git
+git branch -M main
+git push -u origin main
+
+Every time you change something:
+git add .
+git commit -m "describe what you changed. type the exact(particular thing that u changed)"
+git push
+
+Connect GitHub to Render
+Sign up
+Click New → Web Service
+Connect your GitHub repo
+
+Configure
+Render usually auto-detects Java, or you set:
+Build command:
+./mvnw install
+Start command:
+java -jar target/app.jar
+
+Deploy
+Get link
+
+👉 Users open a browser URL,
+
+Railway: Similar to Render
+Connect GitHub
+Auto deploy
+Free credits
+👉 Good alternative if Render fails
