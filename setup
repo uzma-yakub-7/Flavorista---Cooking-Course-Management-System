@@ -15,6 +15,9 @@
   6. Cloud Paywalls & Subscription Gateways:
    * Stripe Developers Hub: stripe.com
       * Paddle Merchant Engine: paddle.com
+* SSLCOMMERZ Hub: You can review their developer integration rules at [sslcommerz.com](https://developer.sslcommerz.com/). They provide clear documentation for raw HTTP/REST integrations that map perfectly to Python code.
+* AmarPay Sandbox Panel: You can access their developer specifications at amarpay.com. They use highly straightforward JSON payloads that Python handles natively with zero configuration bloat.
+
    7. Hydraulic Conveyor (Lightweight Installer Packager): hydraulic.dev
    * Action: Download the standalone Windows package to build your final downloadable .exe files.
 
@@ -114,6 +117,195 @@ java -version
 If configured correctly, the terminal will instantly output Azul Systems, Inc. and display your exact D-drive JDK version. 
 Your PC setup is now perfectly isolated, secure, and ready to host infinite full-stack app projects safely on the D drive.
 
+Running Your Secure Terminal Command
+Every time you compile or run your Java files on your D Drive to test your connection to SSLCOMMERZ or AmarPay, remember to run the safe terminal configuration string we set up earlier so no hidden target metadata accidentally leaks into your C Drive:
+
+# Navigate to your Java project
+cd D:\JavaApps\AppOne
+# Run the app safely using your isolated D-Drive repository cache
+./mvnw spring-boot:run -s D:\GlobalCaches\MavenRepository\settings.xml
+
+------------------------------
+## Next Action Step
+With your directories successfully scaffolded, your infrastructure is entirely locked to your D Drive, rendering it immune to storage bloat.
+
+ Initialize a Scaffold Project Template
+Conveyor has a built-in feature called scaffold. It generates an optimized, ready-to-run sample desktop app template that doesn't download any bloating framework structures. [1] 
+Open your VS Code terminal and run the command matching your preferred language:
+## For Java (JavaFX Bundle):
+# 1. Move to your Apps directory
+cd D:\JavaApps
+# 2. Scaffold a pre-configured JavaFX app template
+conveyor generate javafx my-paid-java-app
+
+Bridge Conveyor to your VS Code Terminal
+Windows needs to recognize the conveyor command when you type it into your VS Code editor.
+
+   1. Press the Windows Key, type env, and click Edit the system environment variables.
+   2. Click Environment Variables... at the bottom right.
+   3. Under System variables (the bottom box), select the variable named Path and click Edit....
+   4. Click New on the right side and paste: D:\DevTools\Conveyor
+   5. Click OK on all open windows to lock in the configuration.
+   6. Restart VS Code so it updates its system path definitions.
+
+Scaffold Your Bangladeshi Paid App Architecture
+Now that the tool is installed globally on your D Drive, you can use your VS Code terminal to generate your production template. Run the command:
+# Navigate to your Java project folder
+cd D:\JavaApps
+# Scaffold a clean JavaFX desktop template
+conveyor generate javafx bd-paid-app
+
+Open and Lock down Storage Targets
+Open your new project folder (bd-paid-app) inside VS Code. Open the generated conveyor.conf text file and paste these explicit storage-override variables into your configurations to block any automated caching on your C Drive:
+
+app {
+  // Keeps all compiling temp structures bound completely to D
+  cache-dir = "D:/GlobalCaches/ConveyorCache"
+  
+  // Explicitly binds the distribution build targets to your local path
+  build-dir = "D:/GlobalCaches/ConveyorBuilds"
+}
+
+Open and Lock down Storage Targets
+Open your new project folder (bd-paid-app) inside VS Code. Open the generated conveyor.conf text file and paste these explicit storage-override variables into your configurations to block any automated caching on your C Drive:
+
+app {
+  // Keeps all compiling temp structures bound completely to D
+  cache-dir = "D:/GlobalCaches/ConveyorCache"
+  
+  // Explicitly binds the distribution build targets to your local path
+  build-dir = "D:/GlobalCaches/ConveyorBuilds"
+}
+
+Open and Inspect the Generated Structure
+Look inside your newly created folder (D:\JavaApps\my-paid-java-app or D:\PythonApps\my-paid-python-app). You will see a highly clean structure containing your source code folder and a file named conveyor.conf. [2, 3] 
+Open conveyor.conf in VS Code and ensure you modify its build directory targets to protect your C-Drive:
+
+app {
+  // Prevent Conveyor from logging build temporary caches on C:
+  cache-dir = "D:/GlobalCaches/ConveyorCache"
+  
+  // Point explicitly to your unzipped Azul Zulu JDK on D
+  jvm.runtimes = "D:/JavaEnv/jdk-azulyfx" 
+}
+
+------------------------------
+## Step 3: Test Run the App Without Packaging
+Before you turn the app into a downloadable setup wizard (.exe), you want to test your changes live while you code. Conveyor lets you run the app directly through its own engine using this fast command: [4] 
+
+conveyor run
+
+This launches a desktop application screen immediately. You can now use this window to start rendering your frontend graphics and UI buttons.
+
+
+
+The Build and Release Workflow
+Once your free-to-browse dashboard layout is written, and your network request to the SSLCOMMERZ/AmarPay API is successfully validating payments, you are ready to compile the final software installer.
+Run the local compilation task: [5, 6] 
+
+conveyor make windows-app
+
+Conveyor reads your files, strips out unused operational components using jlink to optimize compression, and outputs a clean Windows installation package directly into the project folder on your D-Drive. Your public users can click this exact file to install your app on their systems. [7, 8] 
+------------------------------
+
+To bundle and distribute your app as a downloadable desktop installer using Hydraulic Conveyor, you do not need to install heavy build tools on your computer. Conveyor handles packaging dynamically and includes optimized JVM runtimes automatically.
+Follow these steps on the Hydraulic Conveyor website and in your environment to complete your D-drive installation.
+------------------------------
+## Step 1: Download and Extract Conveyor to your D Drive
+
+   1. Go to https://hydraulic.dev/ and click Get Started or navigate to the User Guide.
+   2. Download the Windows standalone package (look for the zip or portable version to avoid C-drive background registry pollution).
+   3. Extract the downloaded package directly into your pre-created folder: D:\DevTools\Conveyor\.
+
+------------------------------
+## Step 2: Add Conveyor to Windows Path
+To run the packaging tool from your VS Code terminal, Windows needs to know its location.
+
+   1. Press the Windows Key, type env, and select Edit the system environment variables.
+   2. Click Environment Variables... at the bottom right.
+   3. Under System variables (the bottom box), scroll down, select the Path variable, and click Edit....
+   4. Click New on the right side and type: D:\DevTools\Conveyor
+   5. Click OK on all windows to save.
+
+------------------------------
+## Step 3: Create a Minimal Configuration File (conveyor.conf)
+You do not use massive software tools to package your app. Conveyor uses a single plain-text config file. Inside your project folder (e.g., D:\JavaApps\PaidAppOne\), create a file named conveyor.conf using VS Code and add these lightweight lines:
+
+// Basic metadata for your Bangladeshi App
+app {
+  display-name = "My Paid BD App"
+  fsname = "my-paid-bd-app"
+  vcs = "github"
+
+  // Points to your Azul Zulu JDK FX unzipped folder on D
+  jvm {
+    gui.main-class = "com.bdapps.paidapp.Main"
+  }
+
+  // Forces Conveyor to use your local storage drive for building
+  cache-dir = "D:/GlobalCaches/ConveyorCache"
+}
+
+------------------------------
+## Step 4: Generate Your Executable Installer
+When your Python or Java code is finished and ready for the public, open your VS Code terminal and execute the build command:
+
+# Navigate to your application folder
+cd D:\JavaApps\PaidAppOne
+# Tell Conveyor to package your project into a Windows setup file
+conveyor make windows-app
+
+Conveyor will read your code files and generate a single, highly compressed .exe or .msi setup wizard inside your project folder.
+Because it uses jlink to strip out unused parts of the Java engine and shares its cache inside D:\GlobalCaches\ConveyorCache, your local disk space remains protected across every application you compile.
+------------------------------
+To add more dependencies in the future, you never need to re-download anything from the Spring Initializr website. Because you selected a Maven project, you can add new libraries by simply pasting text snippets directly inside your project configuration file.
+Here is exactly how to do it in VS Code while keeping your D-Drive storage footprint safe.
+------------------------------
+## Step 1: Open your pom.xml File [1] 
+In your VS Code sidebar, look inside your main project folder (D:\JavaApps\falcon-coaching-center) and open the file named pom.xml. This file acts as the master manifest for your application.
+------------------------------
+## Step 2: Locate the <dependencies> Section
+Scroll down inside pom.xml until you find the block that starts with <dependencies> and ends with </dependencies>. Inside this block, you will see the modules you added earlier (like spring-boot-starter-web and mysql-connector-j). [2] 
+------------------------------
+## Step 3: Find the Dependency Snippet Online
+When you need a new tool (for example, handling JSON validation or encoding security passwords), go to the official Maven Central Repository: mvnrepository.com. [3, 4] 
+
+   1. Search for the library you need.
+   2. Click on the version you want.
+   3. Copy the XML text block under the Maven tab. It will look like this: [5] 
+
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20240303</version>
+</dependency>
+
+------------------------------
+## Step 4: Paste it into VS Code and Save [6] 
+Paste that copied text block anywhere inside your <dependencies> block in your pom.xml file. [7] 
+As soon as you press Ctrl + S to save the file, VS Code's Java extension will detect the change.
+------------------------------
+## 🚨 Critical Rule to Protect Your Storage Space!
+By default, saving the file causes Maven to try to download the library into your C-Drive. To force it onto your D-Drive, do not let VS Code auto-download it via a popup notification.
+Instead, always open your terminal panel and run your isolated refresh command manually:
+
+# Force Maven to fetch the new library strictly into your D-Drive shared cache folder
+./mvnw dependency:resolve -s D:\GlobalCaches\MavenRepository\settings.xml
+
+## 💡 Why this keeps you safe across infinite apps:
+Because of your shared settings.xml setup, if you add the same dependency to App Two in the future, Maven will see it already exists inside D:\GlobalCaches\MavenRepository. It will link to it instantly in less than a second, using 0 MB of additional disk space on your computer.
+------------------------------
+Further Reading: 
+
+
+[1] [https://www.jetbrains.com](https://www.jetbrains.com/help/idea/preparing-for-rest-development.html)
+[2] [https://www.naukri.com](https://www.naukri.com/code360/library/spring-boot-starter-parent)
+[3] [https://tomgregory.com](https://tomgregory.com/how-to-add-a-gradle-dependency)
+[4] [https://medium.com](https://medium.com/maven-by-nature/introduction-to-maven-the-build-tool-that-modernized-java-development-f3c038b4d32e)
+[5] [https://toolsntechniques.ca](https://toolsntechniques.ca/topic10/topic-4.html)
+[6] [https://medium.com](https://medium.com/@adetutuoluwasanmi/building-a-continuous-integration-and-continuous-delivery-ci-cd-pipeline-with-github-actions-5964d43b5be1)
+[7] [https://www.pixelqa.com](https://www.pixelqa.com/blog/post/deciphering-selenium-dependency-management-a-guide-to-pom-xml)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [1] [https://foojay.io](https://foojay.io/today/learn-javafx-with-jshell-in-60-seconds/)
 [2] [https://www.infoq.com](https://www.infoq.com/presentations/netflix-java/)
 [3] [https://coderanch.com](https://coderanch.com/t/753670/java/JavaFx-worth-learning)
@@ -131,3 +323,14 @@ Your PC setup is now perfectly isolated, secure, and ready to host infinite full
 [2] [https://discuss.ipfs.tech](https://discuss.ipfs.tech/t/windows-ipfs-can-you-move-the-datastore-off-the-system-drive/5827)
 [3] [https://github.com](https://github.com/microsoft/vscode/issues/29251)
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+[1] [https://github.com](https://github.com/orgs/sslcommerz/repositories)
+[2] [https://www.pinelabs.com](https://www.pinelabs.com/blog/payment-gateway-integration-explained-api-setup-webhooks-and-error-handling-for-developers)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+[1] https://conveyor.hydraulic.dev
+[2] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/2/tutorial/8-explore-the-integration/)
+[3] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/1.0/tutorial/8-explore-the-integration/)
+[4] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/22.0/tutorial/tortoise/4-build-unpackaged/)
+[5] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/3.0/tutorial/4-build-unpackaged/)
+[6] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/22.0/tutorial/tortoise/3-compile/)
+[7] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/8.0/)
+[8] [https://conveyor.hydraulic.dev](https://conveyor.hydraulic.dev/6.0/configs/jvm/)
