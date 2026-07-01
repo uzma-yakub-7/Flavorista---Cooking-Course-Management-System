@@ -1,0 +1,133 @@
+ This setup ensures you can build full-stack apps in VS Code without ever running out of C-Drive disk storage.
+
+   1. Azul Zulu JDK (with JavaFX): [azul.com](https://www.azul.com/downloads/)
+   * Action: Select Java 17 or 21 (LTS), Windows, x86 64-bit. Choose the ZIP bundle of the JDK FX. Do not get the standard JDK or MSI. [1, 2] 
+   2. Gluon Scene Builder for Windows: [gluonhq.com](https://gluonhq.com/products/scene-builder/)
+   * Action: Download the Windows installer. You will change its target path to D: during installation. [3, 4, 5] 
+   3. VS Code Extensions (Install within your existing VS Code):
+   * Extension Pack for Java: [visualstudio.com](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+      * Spring Boot Extension Pack: [visualstudio.com](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) [6, 7] 
+   4. Spring Initializr (Web Hub): [spring.io](https://start.spring.io/)
+   * Action: Use this link to generate lightweight full-stack templates. [8, 9] 
+   5. Zero-Growth Cloud Databases (No local disk expansion):
+   * Supabase Database Cloud: supabase.com
+      * Neon Serverless PostgreSQL: neon.tech [10] 
+  6. Cloud Paywalls & Subscription Gateways:
+   * Stripe Developers Hub: stripe.com
+      * Paddle Merchant Engine: paddle.com
+   7. Hydraulic Conveyor (Lightweight Installer Packager): hydraulic.dev
+   * Action: Download the standalone Windows package to build your final downloadable .exe files.
+
+   📂 E-Drive Folder Structure Blueprint
+Create these exact folders on your E: drive right now. This structure isolates all compilers, tools, global caches, and projects to keep your development environment clean and sustainable.
+
+E:\
+├── JavaEnv\
+│   └── jdk-azulyfx\          <-- Extract the Azul Zulu JDK FX ZIP file here
+├── DevTools\
+│   ├── SceneBuilder\         <-- Install Gluon Scene Builder into this folder
+│   └── Conveyor\             <-- Place your Hydraulic Conveyor compiler files here
+├── GlobalCaches\
+│   ├── MavenRepository\      <-- Shared folder where all Spring Boot dependencies will sit
+│   └── VSCodeJavaData\       <-- All background Java index/metadata logs from VS Code
+└── JavaAppa\
+    ├── AppOne\               <-- Source files, FXML code, and logic for your first app
+    └── AppTwo\               <-- Source files, FXML code, and logic for your second app
+
+⚙️ What goes where and how to configure them:
+
+Step 1: Configure Windows Environment Variables
+Windows needs to know your Java compiler is on the D drive, and Git/Maven must be routed there too.
+* E:\JavaEnv\jdk-azulyfx: Contains the unzipped Java runtime engine. You must point your Windows Environment Variables (JAVA_HOME) directly to this directory. 
+   1. Press the Windows Key, type env, and select Edit the system environment variables. [1] 
+   2. Click the Environment Variables... button at the bottom right.
+   3. Under System variables (the bottom box), click New...:
+   * Variable name: JAVA_HOME
+      * Variable value: D:\JavaEnv\jdk-azulyfx
+   4. In that same System variables box, scroll down and find the variable named Path, select it, and click Edit....
+   5. Click New on the right side and type: D:\JavaEnv\jdk-azulyfx\bin
+   6. Click OK on all windows to save. 
+
+Step 2: Configure VS Code Global Settings
+VS Code’s Java extension automatically creates huge hidden cache folders on your C drive. We must force it to use your D drive cache folder.
+* E:\GlobalCaches\VSCodeJavaData: In your VS Code preferences (Ctrl + ,), search for "Java Data Directory" and paste this path. This forces VS Code's indexing engine to generate its workspace metadata here instead of clogging your C-Drive.
+   1. Open VS Code.
+   2. Open Settings by pressing Ctrl + , (comma).
+   3. In the top-right corner of the settings window, click the small Open Settings (JSON) icon (it looks like a file with a tiny arrow turning). This opens your global settings.json file.
+   4. Paste the following lines inside the main curly braces { }. Make sure to separate lines with a comma: [3] 
+
+"java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Duser.home=D:/GlobalCaches","java.jdt.ls.java.home": "D:/JavaEnv/jdk-azulyfx","java.sharedRepositories": [
+    "D:/GlobalCaches/MavenRepository"
+],"maven.terminal.customEnv": [
+    {
+        "environmentVariable": "MAVEN_OPTS",
+        "value": "-Duser.home=D:/GlobalCaches"
+    }
+]
+   5. Save the file (Ctrl + S). This forces the Java extension to generate all workspace metadata inside D:\GlobalCaches\VSCodeJavaData.
+
+Step-3: Configure Maven Global Repository
+Whenever you build a Spring Boot app, Maven will try to download gigabytes of dependencies to C:\Users\Username\.m2. We must intercept this.
+* E:\GlobalCaches\MavenRepository: The critical storage-saver folder. By sharing this single folder across all your future apps, Maven will only download a Spring Boot library once. AppTwo will completely reuse the libraries downloaded by AppOne instead of downloading duplicate data.
+
+   1. Go to D:\GlobalCaches\MavenRepository.
+   2. Inside this folder, create a plain text file using Notepad and name it exactly: settings.xml
+   3. Paste this exact configuration block inside it:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://apache.org"
+          xmlns:xsi="http://w3.org"
+          xsi:schemaLocation="http://apache.org http://apache.org">
+  
+  <localRepository>D:/GlobalCaches/MavenRepository</localRepository>
+
+</settings>
+   4. Save and close the file.
+   5. Important project rule: Every time you generate a Spring Boot project from Spring Initializr and open it in VS Code, you must pass this file to your build terminal. 
+   6. When running your app via the terminal, instead of typing ./mvnw spring-boot:run, type: ./mvnw spring-boot:run -s D:\GlobalCaches\MavenRepository\settings.xml
+
+Step 4: Configure Gluon Scene Builder
+Scene Builder needs to know where your Azul Zulu JavaFX library lives so it can preview your UI components without downloading separate kits.
+* E:\DevTools\SceneBuilder: Holds the UI designer software. Inside VS Code, you will configure your settings to point to the executable file inside this directory so you can open layout designs cleanly. 
+
+   1. Run the Scene Builder installer that you saved to D:\DevTools\SceneBuilder.
+   2. Once installed, open Scene Builder.
+   3. Go to File -> Preferences (or use Ctrl + ,).
+   4. Look for the Java Home or JavaFX SDK settings path.
+   5. Set it to point exactly to your portable folder: D:\JavaEnv\jdk-azulyfx
+
+* E:\JavaApps:
+- The clean home for your creative assets. Each project folder here will contain small text files (.java logic, .fxml interfaces, .css styling). 
+- Because you are hosting your database in the cloud, these folders stay compact and will never uncontrollably grow in size.
+
+Step 5: Route Git/GitHub Caches to D Drive
+Git tracking can leave massive hidden index histories inside your user profile on C.
+
+   1. Open your terminal inside VS Code (or Git Bash).
+   2. Run these two commands to force Git to look at your D drive for global configurations:
+   
+   git config --global core.hooksPath D:/GlobalCaches/.githooks
+
+🛡️ The Ultimate Verification Test
+To make sure nothing is touching your C drive, open your VS Code terminal and type:
+java -version
+If configured correctly, the terminal will instantly output Azul Systems, Inc. and display your exact D-drive JDK version. 
+Your PC setup is now perfectly isolated, secure, and ready to host infinite full-stack app projects safely on the D drive.
+
+[1] [https://foojay.io](https://foojay.io/today/learn-javafx-with-jshell-in-60-seconds/)
+[2] [https://www.infoq.com](https://www.infoq.com/presentations/netflix-java/)
+[3] [https://coderanch.com](https://coderanch.com/t/753670/java/JavaFx-worth-learning)
+[4] [https://www.youtube.com](https://www.youtube.com/watch?v=SkquCbOLwOQ)
+[5] [https://www.ssec.wisc.edu](https://www.ssec.wisc.edu/~tomw/visadtutor/index.html)
+[6] [https://www.youtube.com](https://www.youtube.com/watch?v=BB0gZFpukJU)
+[7] [https://www.infoworld.com](https://www.infoworld.com/article/2266032/build-a-java-application-in-visual-studio-code.html)
+[8] [https://www.youtube.com](https://www.youtube.com/watch?v=YVF08E7Xd_Y)
+[9] [https://sookocheff.com](https://sookocheff.com/post/java/building-a-modern-java-web-app-with-spring-boot/)
+[10] [https://fusion.works](https://fusion.works/lovable-production-environment-without-rebuilding/)
+[11] [https://www.codejava.net](https://www.codejava.net/java-core/how-to-write-compile-and-run-a-hello-world-java-program-for-beginners)
+[12] [https://clouddevs.com](https://clouddevs.com/java/desktop-apps-with-scene-builder/)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[1] [https://www.youtube.com](https://www.youtube.com/watch?v=rWVaxSWvxUQ)
+[2] [https://discuss.ipfs.tech](https://discuss.ipfs.tech/t/windows-ipfs-can-you-move-the-datastore-off-the-system-drive/5827)
+[3] [https://github.com](https://github.com/microsoft/vscode/issues/29251)
+------------------------------------------------------------------------------------------------------------------------------------------------------
