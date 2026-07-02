@@ -113,6 +113,63 @@ React setup is complete.
 
 ---
 
+# Alternatively,
+Microsoft Windows [Version 10.0.26200.8737]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\flavorista> dir
+ 
+ Directory of E:\flavorista
+
+07/02/2026  04:35 PM    <DIR>          .
+07/02/2026  12:01 AM                38 .gitattributes
+07/02/2026  04:24 PM    <DIR>          .github
+07/02/2026  12:01 AM               394 .gitignore
+07/02/2026  04:24 PM    <DIR>          .vscode
+07/02/2026  04:28 PM    <DIR>          backend
+07/02/2026  04:35 PM    <DIR>          frontend
+07/02/2026  04:24 PM    <DIR>          target
+               2 File(s)            432 bytes
+               6 Dir(s)  132,360,409,088 bytes free
+
+E:\flavorista> npm create vite@latest frontend -- --template react
+Need to install the following packages:
+create-vite@9.1.1
+Ok to proceed? (y) y
+
+> npx
+> create-vite frontend --template react
+
+|
+o  Which linter to use?
+|  ESLint
+|
+o  Install with npm and start now?
+|  Yes
+|
+o  Scaffolding project in E:\flavorista\frontend...
+|
+o  Installing dependencies with npm...
+
+added 135 packages, and audited 136 packages in 2m
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+|
+o  Starting dev server...
+
+> frontend@0.0.0 dev
+> vite
+
+
+  VITE v8.1.3  ready in 6073 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
 # 35. Frontend Structure
 
 Final frontend structure:
