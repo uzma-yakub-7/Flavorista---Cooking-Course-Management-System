@@ -170,6 +170,54 @@ o  Starting dev server...
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
 
+# Tailwind
+E:\flavorista\frontend> npm list vite
+frontend@0.0.0 E:\flavorista\frontend
++-- @vitejs/plugin-react@6.0.3
+| `-- vite@8.1.3 deduped
+`-- vite@8.1.3
+
+
+E:\flavorista\frontend> npm list react
+frontend@0.0.0 E:\flavorista\frontend
++-- react-dom@19.2.7
+| `-- react@19.2.7 deduped
+`-- react@19.2.7
+
+
+E:\flavorista\frontend> java -version
+openjdk version "21.0.11" 2026-04-21 LTS
+OpenJDK Runtime Environment Zulu21.50+19-CA (build 21.0.11+10-LTS)
+OpenJDK 64-Bit Server VM Zulu21.50+19-CA (build 21.0.11+10-LTS, mixed mode, sharing)
+
+E:\flavorista\frontend> javac -version
+javac 21.0.11
+
+E:\flavorista\frontend> npm install tailwindcss @tailwindcss/vite
+
+added 10 packages, and audited 146 packages in 6s
+
+32 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+E:\flavorista\frontend> npm run dev
+
+> frontend@0.0.0 dev
+> vite
+
+5:10:07 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v8.1.3  ready in 4239 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+5:11:11 PM [vite] vite.config.js changed, restarting server...
+5:11:11 PM [vite] vite.config.js changed, restarting server... (x2)
+5:11:12 PM [vite] server restarted.
+
 # 35. Frontend Structure
 
 Final frontend structure:
