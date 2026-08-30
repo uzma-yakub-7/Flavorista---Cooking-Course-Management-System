@@ -7,24 +7,48 @@
 - Tahmina Tanni (241-134-004)
 - Abida (241-134-029)
 
-## Design Pattern
+### Design Patterns
 
-- [Design Patterns](src/DesignPattern.md)
+- [Design Patterns Documentation](src/DesignPattern.md)
 
-## Testing & Code Coverage
 
-Flavorista's backend is tested using JUnit 5 and Mockito.
+## Software Testing
+
+Flavorista's backend is tested using **JUnit 5** and **Mockito**.
+
+### Testing Requirements
+
+The backend tests cover individual classes and components in isolation. 
+Mockito is used to mock dependencies where required so that the unit under test is isolated from external dependencies.
 
 ### JaCoCo Coverage Report
 
-![JaCoCo Coverage Report](src/jacoco/jacoco-output.png)
+<p align="center">
+  <img src="src/jacoco/jacoco-output.png" 
+       alt="JaCoCo Test Coverage Report" 
+       width="900">
+</p>
 
-- Total tests: 38
-- Test failures: 0
-- Test errors: 0
-- Line/Instruction coverage: 63%
-- Branch coverage: 95%
-- Required minimum coverage: 50%
+### Test Results
+
+- **Testing Framework:** JUnit 5
+- **Mocking Framework:** Mockito
+- **Total Tests:** 38
+- **Passed:** 38
+- **Failed:** 0
+- **Errors:** 0
+- **Skipped:** 0
+- **Line/Instruction Coverage:** 63%
+- **Branch Coverage:** 95%
+- **Required Minimum Coverage:** 50%
+
+### Test Categories
+
+- Controller unit tests
+- Entity tests
+- Discount strategy tests
+- Checkout facade tests
+- Mockito-based isolated tests
 
 
 ## Purpose
