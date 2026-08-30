@@ -17,7 +17,7 @@ Flavorista's backend is tested using JUnit 5 and Mockito.
 
 ### JaCoCo Coverage Report
 
-![JaCoCo Coverage Report](sc/jacoco-output.png)
+![JaCoCo Coverage Report](src/jacoco/JCoCo Output.png)
 
 
 ## Purpose
