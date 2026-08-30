@@ -2,7 +2,10 @@
 
 # Flavorista - Cooking Course Enrollment Management System
 
-## Developed by Uzma, Tanni, Abida
+## Developed by SWE-6th Batch: 
+- Uzma Yakub (222-134-001)
+- Tahmina Tanni (241-134-004)
+- Abida (241-134-029)
 
 ## Testing & Code Coverage
 
