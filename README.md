@@ -7,6 +7,10 @@
 - Tahmina Tanni (241-134-004)
 - Abida (241-134-029)
 
+## Design Pattern
+
+- [Design Patterns](src/DesignPattern.md)
+
 ## Testing & Code Coverage
 
 Flavorista's backend is tested using JUnit 5 and Mockito.
